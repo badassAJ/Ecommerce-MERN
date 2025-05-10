@@ -1,0 +1,27 @@
+{
+  "name": "e-commerce-server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix ./e-commerce-client",
+    "dev":"concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "Aditya",
+  "license": "ISC",
+  "type": "module",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "brcypt": "^1.0.1",
+    "concurrently": "^9.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.14.1",
+    "morgan": "^1.10.0"
+  }
+}
