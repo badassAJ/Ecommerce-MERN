@@ -30,6 +30,10 @@
   border-bottom: 2px solid black;
 }
 
+.nav-item.dropdown .nav-link.active {
+  border-bottom: none !important;
+}
+
 .navbar-brand{
   font-weight: 700;
   font-family: 'roboto', sans-serif;

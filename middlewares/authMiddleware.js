@@ -5,17 +5,13 @@ export const requireSignIn = async (req,res,next) => {
     // try {
     //     const decode = JWT.verify(req.headers.authorization,process.env.JWT_SECRET);
     //     req.user = decode;
-    //     console.log("Decoded:", decode);
-
-
-    //     next();
-        
+    //     next();        
     // } catch (error) {
     //     console.log(error);
     // }
     try {
         const decoded = JWT.verify(req.headers.authorization, process.env.JWT_SECRET);
-        const user = await userModel.findById(decoded._id); // ✅ Fetch full user
+        const user = await userModel.findById(decoded?._id); // ✅ Fetch full user
         if (!user) {
             return res.status(401).send({ success: false, message: 'User not found' });
         }
@@ -25,7 +21,10 @@ export const requireSignIn = async (req,res,next) => {
         console.log(error);
         res.status(401).send({ success: false, message: 'Invalid Token' });
     }
+
 };
+
+
 
 
 //admin access
